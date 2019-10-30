@@ -1,4 +1,11 @@
 const express = require('express'),
-app = express()
+    mongoose = require('mongoose'),
+    app = express()
 
-app.listen(3000 || process.env.PORT, () => {console.log("Listening to port 3000")})
+mongoose.connect('mongodb://alsong:test123@ds018839.mlab.com:18839/animatedb', { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => {
+        app.listen(3000 || process.env.PORT, () => { console.log("Listening to port 3000") })
+    })
+    .catch(err => {
+        console.log(err)
+    })
