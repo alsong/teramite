@@ -215,7 +215,7 @@ app.use(cors())
 
 mongoose.connect('mongodb://alsong:test123@ds018839.mlab.com:18839/animatedb', { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
-        const port = 3000 || process.env.PORT
+        const port = process.env.PORT
         app.listen(port, () => { console.log(`Listening to port ${port}`) })
     })
     .catch(err => {
